@@ -1,0 +1,90 @@
+[
+  {
+    "prueba": "caida_VM2_completa_lectura_y_carga",
+    "ok": true,
+    "utc": "2026-11-08T07:17:48Z",
+    "resultado": {
+      "vm": "i-0fb1824460b1469c5",
+      "salida": "{\"sha_original\": \"a05e8da88f68d36a9b079947e26528947f8242734fe5eb83d3af93964f5189d8\", \"sha_recuperado\": \"a05e8da88f68d36a9b079947e26528947f8242734fe5eb83d3af93964f5189d8\", \"vm2\": \"stopped\", \"etcd_vivos\": 2}\nCarga nueva confirmada con VM2 apagada"
+    }
+  },
+  {
+    "prueba": "re_replicacion_entre_VMs",
+    "ok": true,
+    "utc": "2026-11-08T07:17:48Z",
+    "resultado": {
+      "bloques": 8,
+      "replicas": [
+        [
+          "datos1",
+          "datos3",
+          "datos4"
+        ],
+        [
+          "datos1",
+          "datos3",
+          "datos4"
+        ],
+        [
+          "datos3",
+          "datos4",
+          "datos1"
+        ],
+        [
+          "datos4",
+          "datos3",
+          "datos1"
+        ],
+        [
+          "datos1",
+          "datos3",
+          "datos4"
+        ],
+        [
+          "datos3",
+          "datos4",
+          "datos1"
+        ],
+        [
+          "datos4",
+          "datos3",
+          "datos1"
+        ],
+        [
+          "datos1",
+          "datos4",
+          "datos3"
+        ]
+      ],
+      "reparacion_automatica": true
+    }
+  },
+  {
+    "prueba": "perdida_mayoria_etcd",
+    "ok": true,
+    "utc": "2026-11-08T07:17:59Z",
+    "resultado": {
+      "status": 503,
+      "escritura_sin_mayoria": "rechazada"
+    }
+  },
+  {
+    "prueba": "restauracion_cuatro_VMs",
+    "ok": true,
+    "utc": "2026-11-08T07:18:16Z",
+    "resultado": {
+      "nodos_activos": 4,
+      "datos_conservados": true
+    }
+  },
+  {
+    "prueba": "replica_desconectada_despues_plan",
+    "ok": true,
+    "utc": "2026-11-08T07:18:19Z",
+    "resultado": {
+      "replica": "datos1",
+      "replicas_confirmadas": 2,
+      "lectura_correcta": true
+    }
+  }
+]

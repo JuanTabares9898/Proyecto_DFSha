@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.private/
+runtime/
+evidencias/archivos/
+*.pem
+*.key
+*.part
+*.tar.gz
+.DS_Store

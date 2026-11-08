@@ -1,0 +1,231 @@
+[
+  {
+    "prueba": "autenticacion_y_cuatro_nodos",
+    "ok": true,
+    "segundos": 0.21698418400001174,
+    "resultado": {
+      "usuario": "andres",
+      "nodos": 4
+    }
+  },
+  {
+    "prueba": "sin_credenciales",
+    "ok": true,
+    "segundos": 0.004504990000043563,
+    "resultado": {
+      "status": 401,
+      "error": "autenticación requerida"
+    }
+  },
+  {
+    "prueba": "credenciales_invalidas",
+    "ok": true,
+    "segundos": 0.19291262699999834,
+    "resultado": {
+      "status": 401,
+      "error": "credenciales inválidas"
+    }
+  },
+  {
+    "prueba": "directorio_no_vacio",
+    "ok": true,
+    "segundos": 0.040227775000005295,
+    "resultado": [
+      {
+        "ok": true,
+        "path": "/t1794122209902699183/hijo"
+      },
+      {
+        "status": 409,
+        "error": "directorio no vacío"
+      }
+    ]
+  },
+  {
+    "prueba": "aislamiento_usuario",
+    "ok": true,
+    "segundos": 0.0043640430000095876,
+    "resultado": {
+      "status": 403,
+      "error": "el espacio pertenece a otro usuario"
+    }
+  },
+  {
+    "prueba": "path_traversal",
+    "ok": true,
+    "segundos": 0.0038269519999971635,
+    "resultado": {
+      "status": 403,
+      "error": "no se permite atravesar directorios"
+    }
+  },
+  {
+    "prueba": "carga_64_MiB",
+    "ok": true,
+    "segundos": 1.7138380569999754,
+    "resultado": {
+      "file_id": "caf6d06f-ba6d-41b0-9ce0-65bcb9cb2e57",
+      "size": 67108864,
+      "version": 1
+    }
+  },
+  {
+    "prueba": "recuperacion_hash_y_distribucion",
+    "ok": true,
+    "segundos": 1.6867335029999708,
+    "resultado": {
+      "bytes": 67108864,
+      "bloques": 16,
+      "hash_original": "1f8bfa579227d0cd9c7c4489feda832ae19424885e353a2f8c0a51b367403b83",
+      "hash_recuperado": "1f8bfa579227d0cd9c7c4489feda832ae19424885e353a2f8c0a51b367403b83",
+      "nodos": [
+        "https://172.31.82.163:9443",
+        "https://172.31.82.172:9443",
+        "https://172.31.93.188:9443",
+        "https://172.31.94.179:9443"
+      ]
+    }
+  },
+  {
+    "prueba": "otra_cuenta_no_ve_archivo",
+    "ok": true,
+    "segundos": 0.21866496100000177,
+    "resultado": {
+      "status": 403,
+      "error": "el espacio pertenece a otro usuario"
+    }
+  },
+  {
+    "prueba": "read_write_y_snapshot",
+    "ok": true,
+    "segundos": 1.9164855949999833,
+    "resultado": {
+      "offset": 4194301,
+      "bytes": 24,
+      "snapshot_antiguo_conservado": true,
+      "nueva_apertura_ve_commit": true
+    }
+  },
+  {
+    "prueba": "append",
+    "ok": true,
+    "segundos": 0.8931448189999287,
+    "resultado": {
+      "anexado": 8
+    }
+  },
+  {
+    "prueba": "escritores_mismo_bloque",
+    "ok": true,
+    "segundos": 1.1090387059999784,
+    "resultado": {
+      "resultados": [
+        200,
+        409
+      ],
+      "ganadores": 1
+    }
+  },
+  {
+    "prueba": "escritores_bloques_distintos",
+    "ok": true,
+    "segundos": 1.7132240089999868,
+    "resultado": {
+      "commits": 2,
+      "ambos_cambios_conservados": true
+    }
+  },
+  {
+    "prueba": "lock_exclusivo",
+    "ok": true,
+    "segundos": 1.1741429710000375,
+    "resultado": {
+      "status": 423,
+      "error": "rango bloqueado por otro handle"
+    }
+  },
+  {
+    "prueba": "fencing_rechaza_escritor_vencido",
+    "ok": true,
+    "segundos": 5.938885351000067,
+    "resultado": {
+      "status": 410,
+      "error": "lease vencido o fencing token inválido"
+    }
+  },
+  {
+    "prueba": "renovacion_lock_y_nuevo_fencing",
+    "ok": true,
+    "segundos": 6.773037727999963,
+    "resultado": {
+      "primer_fencing": 920,
+      "nuevo_fencing": 926,
+      "commit_tras_TTL_original": true
+    }
+  },
+  {
+    "prueba": "TLS_1_3_obligatorio",
+    "ok": true,
+    "segundos": 0.0016892730000108713,
+    "resultado": {
+      "TLS_1_2": "rechazado",
+      "minimo": "TLS 1.3"
+    }
+  },
+  {
+    "prueba": "sin_archivo_parcial_visible",
+    "ok": true,
+    "segundos": 0.16695805500000915,
+    "resultado": {
+      "status": 404,
+      "error": "archivo inexistente"
+    }
+  },
+  {
+    "prueba": "cifrado_y_permisos_en_reposo",
+    "ok": true,
+    "segundos": 0.09000596999999289,
+    "resultado": {
+      "bloques_en_disco": 65,
+      "texto_claro_no_encontrado": true,
+      "permisos": "0600",
+      "cifrado": "AES-256-GCM en el cliente"
+    }
+  },
+  {
+    "prueba": "mTLS_interno",
+    "ok": true,
+    "segundos": 0.0045899469999994835,
+    "resultado": {
+      "sin_certificado_rechazado_por_TLS": true
+    }
+  },
+  {
+    "prueba": "corrupcion_rechazada",
+    "ok": true,
+    "segundos": 0.47433928399993874,
+    "resultado": {
+      "status": 422,
+      "error": "checksum_mismatch"
+    }
+  },
+  {
+    "prueba": "borrar_y_directorios",
+    "ok": true,
+    "segundos": 0.08077944700005446,
+    "resultado": [
+      {
+        "ok": true,
+        "path": "/t1794122209902699183/grande.bin"
+      },
+      {
+        "ok": true,
+        "path": "/t1794122209902699183/hijo"
+      },
+      {
+        "ok": true,
+        "path": "/t1794122209902699183"
+      }
+    ]
+  }
+]

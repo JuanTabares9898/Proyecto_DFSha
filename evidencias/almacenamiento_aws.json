@@ -1,0 +1,26 @@
+[
+  {
+    "bloques": 330,
+    "permisos": "0600",
+    "bytes": 1363182096,
+    "vm": "i-0c741968435d55605"
+  },
+  {
+    "bloques": 302,
+    "permisos": "0600",
+    "bytes": 1254129380,
+    "vm": "i-0fb1824460b1469c5"
+  },
+  {
+    "bloques": 305,
+    "permisos": "0600",
+    "bytes": 1262518080,
+    "vm": "i-0f180c7da562cf99b"
+  },
+  {
+    "bloques": 329,
+    "permisos": "0600",
+    "bytes": 1363158068,
+    "vm": "i-012aacd7a097fbb66"
+  }
+]

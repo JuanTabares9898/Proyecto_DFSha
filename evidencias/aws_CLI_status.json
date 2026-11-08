@@ -1,0 +1,29 @@
+{
+  "control": "control1",
+  "nodes": [
+    {
+      "domain": "vm1",
+      "internal": "https://172.31.93.188:9444",
+      "node_id": "datos1",
+      "url": "https://172.31.93.188:9443"
+    },
+    {
+      "domain": "vm2",
+      "internal": "https://172.31.82.163:9444",
+      "node_id": "datos2",
+      "url": "https://172.31.82.163:9443"
+    },
+    {
+      "domain": "vm3",
+      "internal": "https://172.31.82.172:9444",
+      "node_id": "datos3",
+      "url": "https://172.31.82.172:9443"
+    },
+    {
+      "domain": "vm4",
+      "internal": "https://172.31.94.179:9444",
+      "node_id": "datos4",
+      "url": "https://172.31.94.179:9443"
+    }
+  ]
+}

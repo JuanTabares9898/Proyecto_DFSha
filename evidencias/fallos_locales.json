@@ -1,0 +1,64 @@
+[
+  {
+    "prueba": "caida_nodo_y_lectura",
+    "resultado": {
+      "nodo": "datos1",
+      "hash_original": "8ae84bf6decee3a39cceca44633d8529267bdc62ac46d8fe95039878bfdae436",
+      "hash_recuperado": "8ae84bf6decee3a39cceca44633d8529267bdc62ac46d8fe95039878bfdae436"
+    },
+    "ok": true,
+    "utc": "2026-11-08T06:54:41.212339+00:00"
+  },
+  {
+    "prueba": "re_replicacion_a_nodo_suplente",
+    "resultado": {
+      "bloques": 5,
+      "replicas_por_bloque": 3,
+      "destinos": [
+        "datos2",
+        "datos3",
+        "datos4"
+      ]
+    },
+    "ok": true,
+    "utc": "2026-11-08T06:54:57.692536+00:00"
+  },
+  {
+    "prueba": "caida_control_y_etcd",
+    "resultado": {
+      "control1": "apagado",
+      "miembros_etcd_vivos": 2,
+      "carga_con_quorum": true
+    },
+    "ok": true,
+    "utc": "2026-11-08T06:54:59.257505+00:00"
+  },
+  {
+    "prueba": "sin_mayoria_rechaza_metadatos",
+    "resultado": {
+      "status": 503,
+      "segundos": 4.036
+    },
+    "ok": true,
+    "utc": "2026-11-08T06:55:04.482254+00:00"
+  },
+  {
+    "prueba": "restauracion",
+    "resultado": {
+      "nodos": 4,
+      "etcd": "tres miembros reiniciados"
+    },
+    "ok": true,
+    "utc": "2026-11-08T06:55:09.840347+00:00"
+  },
+  {
+    "prueba": "replica_desconectada_durante_escritura",
+    "resultado": {
+      "replica": "datos3",
+      "confirmadas": 2,
+      "lectura_version_confirmada": true
+    },
+    "ok": true,
+    "utc": "2026-11-08T06:55:10.013519+00:00"
+  }
+]

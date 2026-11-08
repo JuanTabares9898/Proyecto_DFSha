@@ -1,0 +1,105 @@
+{
+  "utc": "2026-11-08T07:24:03Z",
+  "proyecto": "DFSha-AJ-20261108",
+  "instancias": [
+    {
+      "vm": 1,
+      "id": "i-0c741968435d55605",
+      "estado": "stopped",
+      "tipo": "t3.small",
+      "ip_privada": "172.31.93.188",
+      "zona": "us-east-1a"
+    },
+    {
+      "vm": 2,
+      "id": "i-0fb1824460b1469c5",
+      "estado": "stopped",
+      "tipo": "t3.small",
+      "ip_privada": "172.31.82.163",
+      "zona": "us-east-1a"
+    },
+    {
+      "vm": 3,
+      "id": "i-0f180c7da562cf99b",
+      "estado": "stopped",
+      "tipo": "t3.small",
+      "ip_privada": "172.31.82.172",
+      "zona": "us-east-1a"
+    },
+    {
+      "vm": 4,
+      "id": "i-012aacd7a097fbb66",
+      "estado": "stopped",
+      "tipo": "t3.small",
+      "ip_privada": "172.31.94.179",
+      "zona": "us-east-1a"
+    }
+  ],
+  "volumenes": [
+    {
+      "id": "vol-0a12cf2ecc15fb796",
+      "GiB": 12,
+      "cifrado": true,
+      "tipo": "gp3",
+      "instancia": "i-012aacd7a097fbb66"
+    },
+    {
+      "id": "vol-09a2c75946373f8d4",
+      "GiB": 12,
+      "cifrado": true,
+      "tipo": "gp3",
+      "instancia": "i-0fb1824460b1469c5"
+    },
+    {
+      "id": "vol-0bd6824ea8dbebbcf",
+      "GiB": 12,
+      "cifrado": true,
+      "tipo": "gp3",
+      "instancia": "i-0c741968435d55605"
+    },
+    {
+      "id": "vol-0cb7d941bc5c868e2",
+      "GiB": 12,
+      "cifrado": true,
+      "tipo": "gp3",
+      "instancia": "i-0f180c7da562cf99b"
+    }
+  ],
+  "grupo_seguridad": {
+    "id": "sg-08faaa69e1a7a2258",
+    "nombre": "DFSha-AJ-20261108",
+    "puertos_internos": [
+      22,
+      2379,
+      2380,
+      8443,
+      8444,
+      9443,
+      9444
+    ],
+    "SSH_externo": "IP de administrador /32",
+    "aplicacion_publica": false
+  },
+  "recursos_previos": [
+    {
+      "id": "i-068baa8245f006a87",
+      "nombre": "lab",
+      "configuracion_preservada": true,
+      "estado": "running"
+    },
+    {
+      "id": "i-09448e8d0f92ea4b1",
+      "nombre": "nfs-client",
+      "configuracion_preservada": true,
+      "estado": "running"
+    },
+    {
+      "id": "i-0c884c204a07310f1",
+      "nombre": "nfs-serverr",
+      "configuracion_preservada": true,
+      "estado": "running"
+    }
+  ],
+  "discos_previos_preservados": 4,
+  "ningun_recurso_previo_modificado": true
+}
